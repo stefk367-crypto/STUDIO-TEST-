@@ -73,7 +73,7 @@ async function setCamFps(fps, btn) {
   camFps = fps;
   document.querySelectorAll('.fps-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  if(cameraStream) { stopCamera(); try { await startCamera(); } catch(e) { toast('Nie można zmienić FPS: ' + e.message, 'error'); } }
+  if(cameraStream) { stopCamera(); try { await startCamera(); } catch(e) { toast(t('toast_fps_err') + e.message, 'error'); } }
 }
 
 async function setCamQuality(w, h, btn) {
@@ -85,7 +85,7 @@ async function setCamQuality(w, h, btn) {
     try {
       await startCamera();
     } catch(e) {
-      toast('Nie można zmienić rozdzielczości: ' + e.message, 'error');
+      toast(t('toast_res_err') + e.message, 'error');
     }
   }
 }
@@ -129,7 +129,7 @@ let camStarting = false;
 async function startCamera() {
   if(camStarting) return;
   if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    toast('Przeglądarka nie obsługuje kamery lub strona nie jest na HTTPS', 'error'); return;
+    toast(t('toast_cam_unsupported'), 'error'); return;
   }
   camStarting = true;
   try {
@@ -151,6 +151,7 @@ async function startCamera() {
     const vid = document.getElementById('videoEl');
     vid.srcObject = cameraStream;
     vid.style.display = 'block';
+    vid.style.transform = 'scaleX(-1)'; // domyślne lustro — ręka po tej samej stronie co na żywo
     // Bug fix: jawne play() — niektóre przeglądarki ignorują autoplay attr
     vid.play().catch(() => {});
     document.getElementById('placeholder').style.display = 'none';
@@ -174,7 +175,7 @@ async function startCamera() {
 
       // Pokaż toast jeśli kamera dała inną rozdzielczość niż proszona
       if(realW !== camWidth || realH !== camHeight) {
-        toast(`📷 Kamera: ${realW}×${realH} (prosiłeś o ${camWidth}×${camHeight} — nieobsługiwana)`, 'warn');
+        toast(t('toast_cam_res_warn').replace('%W%',realW).replace('%H%',realH).replace('%RW%',camWidth).replace('%RH%',camHeight), 'warn');
         // Zaktualizuj aktywny przycisk na faktyczną rozdzielczość
         document.querySelectorAll('.qual-btn').forEach(b => {
           const [bw, bh] = b.title.replace(' px','').replace(' ✓','').replace(/— .*/,'').trim().split('×').map(Number);
@@ -208,7 +209,7 @@ async function startCamera() {
       }
     };
   } catch(e) {
-    toast('Brak dostępu do kamery: ' + e.message, 'error');
+    toast(t('toast_cam_no_access') + e.message, 'error');
   } finally {
     camStarting = false;
   }
@@ -255,7 +256,7 @@ async function toggleMic() {
 
 async function startMic() {
   if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    toast('Przeglądarka nie obsługuje mikrofonu lub strona nie jest na HTTPS', 'error'); return;
+    toast(t('toast_mic_unsupported'), 'error'); return;
   }
   try {
     micStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, sampleRate: 48000 } });
@@ -272,7 +273,7 @@ async function startMic() {
     // Fill mic details if modal open
     updateMicDetails();
   } catch(e) {
-    toast('Brak dostępu do mikrofonu: ' + e.message, 'error');
+    toast(t('toast_mic_no_access') + e.message, 'error');
   }
 }
 
@@ -756,7 +757,7 @@ function setFx(name, btn) {
     return;
   }
 
-  if(!cameraStream) { toast('Najpierw uruchom kamerę! 📷', 'warn'); currentFx='none'; return; }
+  if(!cameraStream) { toast(t('toast_cam_first'), 'warn'); currentFx='none'; return; }
 
   // hide raw video, show canvas on top
   vid.style.display = 'block'; // keep for pixel reading
@@ -1758,7 +1759,7 @@ function updateFsBtn() {
 }
 
 function takeSnapshot() {
-  if(!cameraStream) { toast('Najpierw uruchom kamerę! 📷', 'warn'); return; }
+  if(!cameraStream) { toast(t('toast_cam_first'), 'warn'); return; }
   const vid = document.getElementById('videoEl');
   const fxCanvas = document.getElementById('filterCanvas');
   const snap = document.getElementById('snapCanvas');
@@ -2756,7 +2757,7 @@ async function startNetTest() {
   if(netTesting) return;
 
   if(!navigator.onLine) {
-    toast('Brak połączenia z internetem!', 'error');
+    toast(t('toast_no_internet'), 'error');
     netLog('❌ Urządzenie jest offline — sprawdź połączenie', 'bad');
     return;
   }
@@ -2880,7 +2881,7 @@ async function startNetTest() {
     // Bug fix BUG 1: obsłuż Promise.reject z no_worker lub inny błąd
     if(err?.message !== 'no_worker') {
       netLog('❌ Błąd testu: ' + (err?.message || err), 'bad');
-      toast('Błąd testu prędkości: ' + (err?.message || 'nieznany'), 'error');
+      toast(t('toast_speed_err') + (err?.message || t('toast_unknown')), 'error');
     }
     stopTimer();
     resetGauge();
@@ -3741,7 +3742,7 @@ async function chromaToggleCam() {
     await chromaVideo.play();
 
     chromaLoop();
-  } catch(e) { toast('Brak dostępu do kamery: ' + e.message, 'error'); }
+  } catch(e) { toast(t('toast_cam_no_access') + e.message, 'error'); }
 }
 
 function chromaStop() {
@@ -4123,14 +4124,14 @@ function aiBotToggleTts() {
       aiBotLoadVoice();
       speechSynthesis.onvoiceschanged = aiBotLoadVoice;
     }
-    toast('TTS włączone 🔊', 'ok');
+    toast(t('toast_tts_on'), 'ok');
   } else {
     btn.textContent = '🔇 TTS';
     btn.style.color = 'rgba(255,255,255,0.3)';
     btn.style.borderColor = 'rgba(255,255,255,0.1)';
     btn.style.background  = 'transparent';
     if(window.speechSynthesis) speechSynthesis.cancel();
-    toast('TTS wyłączone', 'warn');
+    toast(t('toast_tts_off'), 'warn');
   }
 }
 
@@ -4144,7 +4145,7 @@ function aiBotSpeak(text) {
     .replace(/\n/g,'. ').trim();
   if(!clean) return;
   if(!aiBotTtsVoice) {
-    if(aiBotTtsLang.startsWith('uk')) toast('Brak głosu uk-UA w tej przeglądarce. Użyj Chrome lub Edge.','warn');
+    if(aiBotTtsLang.startsWith('uk')) toast(t('toast_no_uk_voice'),'warn');
     return;
   }
   const utt = new SpeechSynthesisUtterance(clean.substring(0, 280));
@@ -5601,7 +5602,7 @@ function fpsVsyncSample(ft) {
 // ── CSV Export ──
 function fpsExportCsv() {
   if(!fpsFrameTimes || fpsFrameTimes.length === 0) {
-    toast('Brak danych — najpierw uruchom test FPS', 'warn'); return;
+    toast(t('toast_no_fps_data'), 'warn'); return;
   }
   const hz = fpsMonitorHz || 60;
   const rows = ['frame_index,frame_time_ms,fps_instant,above_target'];
@@ -5632,7 +5633,7 @@ function fpsExportCsv() {
   document.body.appendChild(a); a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  toast('Pobrano fps_data.csv', 'success');
+  toast(t('toast_fps_csv_downloaded'), 'success');
 }
 
 // ── 60-second FPS Timeline ──
@@ -6901,7 +6902,7 @@ function reportDownload() {
   a.href = URL.createObjectURL(new Blob([html], {type:'text/html'}));
   a.download = `studiotest-raport-${Date.now()}.html`;
   a.click();
-  toast('Raport pobrany!', 'ok');
+  toast(t('toast_report_downloaded'), 'ok');
 }
 
 function reportCopy() {
@@ -6912,7 +6913,7 @@ function reportCopy() {
     sec.rows.forEach(([k,v]) => { txt += `${k.padEnd(20)} ${v}\n`; });
     txt += '\n';
   });
-  navigator.clipboard.writeText(txt).then(() => toast('Skopiowano!', 'ok')).catch(() => toast('Błąd kopiowania', 'error'));
+  navigator.clipboard.writeText(txt).then(() => toast(t('toast_copied'), 'ok')).catch(() => toast(t('toast_copy_err'), 'error'));
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -7564,7 +7565,7 @@ async function vrToggleRecord() {
   try {
     vrStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, sampleRate: 48000 } });
   } catch(e) {
-    toast('Brak dostępu do mikrofonu: ' + e.message, 'error'); return;
+    toast(t('toast_mic_no_access') + e.message, 'error'); return;
   }
 
   const ctx = vrGetCtx();
@@ -7655,7 +7656,7 @@ async function vrOnRecStop() {
     vrBuffer = await ctx.decodeAudioData(arrayBuf);
     vrOrigBuffer = vrBuffer; // zachowaj oryginał dla A/B
   } catch(e) {
-    toast('Nie można zdekodować nagrania: ' + e.message, 'error');
+    toast(t('toast_decode_err') + e.message, 'error');
     vrDrawIdleWave(); return;
   }
 
@@ -8366,7 +8367,7 @@ function vrDistCurve(amount) {
 
 // ── Pobierz z efektami ──
 async function vrDownloadProcessed() {
-  if(!vrBuffer) { toast('Brak nagrania', 'error'); return; }
+  if(!vrBuffer) { toast(t('toast_no_recording'), 'error'); return; }
 
   const dl = document.getElementById('vrDownloadBtn');
   const origText = dl.textContent;
@@ -8420,7 +8421,7 @@ async function vrDownloadProcessed() {
     a.download = `glos_efekt_${vrPreset}_${Date.now()}.wav`;
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 5000);
-    toast('Pobrano z efektami ✅', 'ok');
+    toast(t('toast_downloaded_fx'), 'ok');
   } catch(e) {
     console.error(e);
     // Fallback — pobierz surowe
@@ -8428,7 +8429,7 @@ async function vrDownloadProcessed() {
     a.href  = URL.createObjectURL(vrBlob);
     a.download = `glos_${Date.now()}.webm`;
     a.click();
-    toast('Pobrano oryginał (błąd renderowania)', 'warn');
+    toast(t('toast_downloaded_orig_err'), 'warn');
   }
 
   dl.textContent = origText;
@@ -8476,7 +8477,7 @@ function vrToggleLoop() {
 
 // ── A/B porównanie ──
 function vrToggleAB() {
-  if(!vrBuffer) { toast('Najpierw nagraj głos', 'warn'); return; }
+  if(!vrBuffer) { toast(t('toast_record_voice_first'), 'warn'); return; }
   if(!vrABMode) {
     // Włącz tryb A/B — zacznij od oryginału
     vrABMode = true;
@@ -11782,7 +11783,7 @@ async function initMsAudio() {
     startMsVisualizer();
     updateMsDeviceInfo();
   } catch(e) {
-    toast('Brak dostępu do mikrofonu: ' + e.message, 'error');
+    toast(t('toast_mic_no_access') + e.message, 'error');
   }
 }
 
@@ -12259,8 +12260,8 @@ async function toggleRecording() {
 async function startRecording() {
   // Bug fix: guard na double-start
   if(mediaRecorder) return;
-  if(!cameraStream) { toast('Najpierw uruchom kamerę! 📷', 'warn'); return; }
-  if(typeof MediaRecorder === 'undefined') { toast('Przeglądarka nie obsługuje nagrywania wideo', 'error'); return; }
+  if(!cameraStream) { toast(t('toast_cam_first'), 'warn'); return; }
+  if(typeof MediaRecorder === 'undefined') { toast(t('toast_video_rec_unsupported'), 'error'); return; }
 
   // Wybierz źródło wideo do nagrywania:
   // 1. Canvas FX aktywny → nagraj filterCanvas (już ma FX)
@@ -12291,7 +12292,11 @@ async function startRecording() {
       const renderFilterFrame = () => {
         if(!mediaRecorder || mediaRecorder.state !== 'recording') return;
         offCtx.filter = cssFilter || 'none';
+        offCtx.save();
+        offCtx.translate(offCanvas.width, 0);
+        offCtx.scale(-1, 1);
         offCtx.drawImage(vid, 0, 0, offCanvas.width, offCanvas.height);
+        offCtx.restore();
         recFilterRafId = requestAnimationFrame(renderFilterFrame);
       };
       recFilterRafId = requestAnimationFrame(renderFilterFrame);
@@ -12301,7 +12306,28 @@ async function startRecording() {
       videoTrack = cameraStream.getVideoTracks()[0];
     }
   } else {
-    videoTrack = cameraStream.getVideoTracks()[0];
+    // Brak filtrów: nagraj surowy strumień, ale odbity poziomo (lustro), żeby pasował do podglądu na żywo
+    try {
+      const vid = document.getElementById('videoEl');
+      const offCanvas = document.createElement('canvas');
+      offCanvas.width  = vid.videoWidth  || 1280;
+      offCanvas.height = vid.videoHeight || 720;
+      const offCtx = offCanvas.getContext('2d');
+      const renderMirrorFrame = () => {
+        if(!mediaRecorder || mediaRecorder.state !== 'recording') return;
+        offCtx.save();
+        offCtx.translate(offCanvas.width, 0);
+        offCtx.scale(-1, 1);
+        offCtx.drawImage(vid, 0, 0, offCanvas.width, offCanvas.height);
+        offCtx.restore();
+        recFilterRafId = requestAnimationFrame(renderMirrorFrame);
+      };
+      recFilterRafId = requestAnimationFrame(renderMirrorFrame);
+      const offStream = offCanvas.captureStream(camFps || 30);
+      videoTrack = offStream.getVideoTracks()[0];
+    } catch(e) {
+      videoTrack = cameraStream.getVideoTracks()[0];
+    }
   }
 
   const tracks = videoTrack ? [videoTrack] : [...cameraStream.getVideoTracks()];
@@ -12358,7 +12384,7 @@ async function startRecording() {
   };
 
   mediaRecorder.onerror = (e) => {
-    toast('Błąd nagrywania: ' + (e.error?.message || 'nieznany'), 'error');
+    toast(t('toast_rec_err') + (e.error?.message || t('toast_unknown')), 'error');
     stopRecording();
   };
 
@@ -12682,6 +12708,35 @@ const I18N = {
     rt_progress: 'POSTĘP PRÓB',
     rt_chart_empty: 'Brak danych — zrób kilka prób',
     rt_attempt: 'Próba 1',
+    toast_fps_err: 'Nie można zmienić FPS: ',
+    toast_res_err: 'Nie można zmienić rozdzielczości: ',
+    toast_cam_unsupported: 'Przeglądarka nie obsługuje kamery lub strona nie jest na HTTPS',
+    toast_cam_res_warn: '📷 Kamera: %W%×%H% (prosiłeś o %RW%×%RH% — nieobsługiwana)',
+    toast_cam_no_access: 'Brak dostępu do kamery: ',
+    toast_mic_unsupported: 'Przeglądarka nie obsługuje mikrofonu lub strona nie jest na HTTPS',
+    toast_mic_no_access: 'Brak dostępu do mikrofonu: ',
+    toast_cam_first: 'Najpierw uruchom kamerę! 📷',
+    toast_no_internet: 'Brak połączenia z internetem!',
+    toast_speed_err: 'Błąd testu prędkości: ',
+    toast_unknown: 'nieznany',
+    toast_tts_on: 'TTS włączone 🔊',
+    toast_tts_off: 'TTS wyłączone',
+    toast_no_uk_voice: 'Brak głosu uk-UA w tej przeglądarce. Użyj Chrome lub Edge.',
+    toast_no_fps_data: 'Brak danych — najpierw uruchom test FPS',
+    toast_fps_csv_downloaded: 'Pobrano fps_data.csv',
+    toast_report_downloaded: 'Raport pobrany!',
+    toast_copied: 'Skopiowano!',
+    toast_copy_err: 'Błąd kopiowania',
+    toast_decode_err: 'Nie można zdekodować nagrania: ',
+    toast_no_recording: 'Brak nagrania',
+    toast_downloaded_fx: 'Pobrano z efektami ✅',
+    toast_downloaded_orig_err: 'Pobrano oryginał (błąd renderowania)',
+    toast_record_voice_first: 'Najpierw nagraj głos',
+    toast_video_rec_unsupported: 'Przeglądarka nie obsługuje nagrywania wideo',
+    toast_rec_err: 'Błąd nagrywania: ',
+    toast_csp_header_copied: 'Skopiowano nagłówek CSP',
+    toast_headers_copied: 'Skopiowano plik _headers dla Netlify',
+    toast_err_generic: 'Błąd',
   },
   en: {
     ld_init: 'INITIALIZING...', ld_modules: 'LOADING MODULES...', ld_camera: 'CHECKING CAMERA...', ld_ready: 'READY!',
@@ -12942,6 +12997,35 @@ const I18N = {
     rt_chart_empty: 'Нет данных — сделайте несколько попыток',
     rt_attempt: 'Попытка 1',
     freq: 'ЧАСТОТА',
+    toast_fps_err: 'Не удалось изменить FPS: ',
+    toast_res_err: 'Не удалось изменить разрешение: ',
+    toast_cam_unsupported: 'Браузер не поддерживает камеру или сайт не на HTTPS',
+    toast_cam_res_warn: '📷 Камера: %W%×%H% (запрошено %RW%×%RH% — не поддерживается)',
+    toast_cam_no_access: 'Нет доступа к камере: ',
+    toast_mic_unsupported: 'Браузер не поддерживает микрофон или сайт не на HTTPS',
+    toast_mic_no_access: 'Нет доступа к микрофону: ',
+    toast_cam_first: 'Сначала включите камеру! 📷',
+    toast_no_internet: 'Нет подключения к интернету!',
+    toast_speed_err: 'Ошибка теста скорости: ',
+    toast_unknown: 'неизвестно',
+    toast_tts_on: 'TTS включён 🔊',
+    toast_tts_off: 'TTS выключен',
+    toast_no_uk_voice: 'Нет голоса uk-UA в этом браузере. Используйте Chrome или Edge.',
+    toast_no_fps_data: 'Нет данных — сначала запустите тест FPS',
+    toast_fps_csv_downloaded: 'fps_data.csv скачан',
+    toast_report_downloaded: 'Отчёт скачан!',
+    toast_copied: 'Скопировано!',
+    toast_copy_err: 'Ошибка копирования',
+    toast_decode_err: 'Не удалось декодировать запись: ',
+    toast_no_recording: 'Нет записи',
+    toast_downloaded_fx: 'Скачано с эффектами ✅',
+    toast_downloaded_orig_err: 'Скачан оригинал (ошибка рендеринга)',
+    toast_record_voice_first: 'Сначала запишите голос',
+    toast_video_rec_unsupported: 'Браузер не поддерживает запись видео',
+    toast_rec_err: 'Ошибка записи: ',
+    toast_csp_header_copied: 'CSP-заголовок скопирован',
+    toast_headers_copied: 'Файл _headers для Netlify скопирован',
+    toast_err_generic: 'Ошибка',
   },
   zh: {
     ld_init: '正在初始化...', ld_modules: '正在加载模块...', ld_camera: '正在检测摄像头...', ld_ready: '准备就绪！',
@@ -15204,12 +15288,12 @@ function cspGenUpdate() {
 }
 function cspCopyHeader() {
   if(!window._cspGenVal)return;
-  navigator.clipboard.writeText(window._cspGenHeader+': '+window._cspGenVal).then(()=>toast('Skopiowano nagłówek CSP','success')).catch(()=>toast('Błąd kopiowania','error'));
+  navigator.clipboard.writeText(window._cspGenHeader+': '+window._cspGenVal).then(()=>toast(t('toast_csp_header_copied'),'success')).catch(()=>toast(t('toast_copy_err'),'error'));
 }
 function cspCopyNetlify() {
   if(!window._cspGenVal)return;
   const txt=`/*\n  ${window._cspGenHeader}: ${window._cspGenVal}\n  X-Frame-Options: DENY\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin`;
-  navigator.clipboard.writeText(txt).then(()=>toast('Skopiowano plik _headers dla Netlify','success')).catch(()=>toast('Błąd','error'));
+  navigator.clipboard.writeText(txt).then(()=>toast(t('toast_headers_copied'),'success')).catch(()=>toast(t('toast_err_generic'),'error'));
 }
 
 // ── CSP Proxy ──
@@ -15223,7 +15307,7 @@ function cspSelectProxy(name) {
 }
 function cspCopyProxyRaw() {
   const txt=document.getElementById('cspProxyRaw').textContent;
-  navigator.clipboard.writeText(txt).then(()=>toast('Skopiowano','success')).catch(()=>toast('Błąd','error'));
+  navigator.clipboard.writeText(txt).then(()=>toast(t('toast_copied'),'success')).catch(()=>toast(t('toast_err_generic'),'error'));
 }
 async function runCspProxy() {
   const url=document.getElementById('cspProxyUrl').value.trim();
