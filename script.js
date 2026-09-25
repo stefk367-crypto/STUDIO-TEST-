@@ -2646,7 +2646,7 @@ function runSpeedWorker(phase, onProgress, aliveCheck) {
         const x = new XMLHttpRequest();
         x.open('POST', url, true);
         x.timeout = 3000;
-        x.onload = () => resolve(x.status < 500);
+        x.onload = () => resolve(x.status >= 200 && x.status < 300);
         x.onerror = x.ontimeout = () => resolve(false);
         x.send(new Uint8Array(128));
       });
@@ -2660,7 +2660,7 @@ function runSpeedWorker(phase, onProgress, aliveCheck) {
           const x = new XMLHttpRequest();
           x.open('POST', url, true);
           x.timeout = 5000;
-          x.onload = () => resolve(x.status < 500);
+          x.onload = () => resolve(x.status >= 200 && x.status < 300);
           x.onerror = x.ontimeout = () => resolve(false);
           x.send(new Uint8Array(128));
         });
