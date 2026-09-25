@@ -3703,7 +3703,7 @@ let chromaRecording = false;
 let chromaVideo     = null;
 let chromaTmpCanvas = null;
 let chromaTmpCtx    = null;
-let chromaEffects    = { mirror:false, grayscale:false, invert:false, pixelate:false, thermal:false, nightvision:false, sketch:false };
+let chromaEffects    = { mirror:true, grayscale:false, invert:false, pixelate:false, thermal:false, nightvision:false, sketch:false };
 let chromaFpsLast   = performance.now();
 let chromaFpsCount  = 0;
 
