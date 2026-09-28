@@ -4563,7 +4563,7 @@ function aiBotSend() {
   const messagesEl = document.getElementById('aiBotMessages');
   messagesEl.innerHTML += `<div id="${typingId}" class="ai-msg ai-msg-bot"><div class="ai-typing"><span></span><span></span><span></span></div></div>`;
   messagesEl.scrollTop = messagesEl.scrollHeight;
-  document.getElementById('aiBotStatus').textContent = 'Pisze...';
+  document.getElementById('aiBotStatus').textContent = t('ai_typing');
 
   const delay = 350 + Math.min(msg.length * 8, 800) + Math.random() * 400;
   setTimeout(() => {
@@ -4588,7 +4588,7 @@ function aiBotSend() {
     if(aiBotHistory.length > 30) aiBotHistory = aiBotHistory.slice(-30);
     aiBotAddMsg(reply, 'bot');
     aiBotSpeak(reply);
-    document.getElementById('aiBotStatus').textContent = 'Gotowy · ' + (aiBotCtx.turnCount||1) + ' wiad.';
+    document.getElementById('aiBotStatus').textContent = t('ai_ready_status') + ' · ' + (aiBotCtx.turnCount||1) + ' ' + t('ai_msg_count');
     // Restore quick questions panel after every reply
     const _qEl = document.getElementById('aiBotQuick');
     if(_qEl) { _qEl.style.display = 'block'; _qEl.style.opacity = '1'; }
@@ -12737,6 +12737,89 @@ const I18N = {
     toast_csp_header_copied: 'Skopiowano nagłówek CSP',
     toast_headers_copied: 'Skopiowano plik _headers dla Netlify',
     toast_err_generic: 'Błąd',
+    tr_odswiezanie_monitora: 'ODŚWIEŻANIE MONITORA',
+    tr_stabilnosc_fps: 'STABILNOŚĆ FPS',
+    tr_klasy_p_ynnosci: '📺 KLASY PŁYNNOŚCI',
+    tr_rozk_ad_fps: '📊 ROZKŁAD FPS',
+    tr_kliknij_start_aby_rozpoczac: 'Kliknij START aby rozpocząć pomiar FPS',
+    tr_wyczysc: '🗑 Wyczyść',
+    tr_wskazowka_napisz_jestem_imie: 'Wskazówka: napisz "Jestem [imię]" a zapamiętam Cię!',
+    tr_ze_stron_https_netlify: '⚠️ Ze stron HTTPS (Netlify) przeglądarka blokuje skanowanie sieci lokalnej. Skaner pokazuje co realnie można wykryć: Twoje IP, router i inne urządzenia wykryte przez WebRTC + odwrócone DNS.',
+    tr_twoje_urzadzenie: 'TWOJE URZĄDZENIE',
+    tr_siec: 'SIEĆ',
+    tr_skanuj_siec: '▶ SKANUJ SIEĆ',
+    tr_znalezione_urzadzenia: 'ZNALEZIONE URZĄDZENIA',
+    tr_kliknij_zeby_pobrac_kolor: '👆 kliknij żeby pobrać kolor',
+    tr_w_acz_kamere: '▶ WŁĄCZ KAMERĘ',
+    tr_kolor_do_usuniecia: '🎯 KOLOR DO USUNIĘCIA',
+    tr_w_asny_kolor_lub: 'Własny kolor lub kliknij na obraz',
+    tr_jasnosc: 'Jasność',
+    tr_jakosc_usuwania: '⚙️ JAKOŚĆ USUWANIA',
+    tr_wyg_adzenie: 'Wygładzenie',
+    tr_t_o_zastepcze: '🖼️ TŁO ZASTĘPCZE',
+    tr_wy_aczona: '— (wyłączona)',
+    tr_krawedzie: '✏️ Krawędzie',
+    tr_b_yskawica: '⚡ Błyskawica',
+    tr_babelki: '🫧 Bąbelki',
+    tr_sr_fps: 'śr. — fps',
+    tr_odswiez: '↺ Odśwież',
+    tr_adowanie: 'Ładowanie...',
+    tr_bateria_adowanie: 'BATERIA / ŁADOWANIE',
+    tr_adowanie_2: 'Ładowanie...',
+    tr_obciazenie_cpu_estymacja_przez: 'OBCIĄŻENIE CPU (ESTYMACJA PRZEZ FPS)',
+    tr_historia_obciazenia_cpu_ostatnie: 'HISTORIA OBCIĄŻENIA CPU (ostatnie 60s)',
+    tr_ograniczenie_przegladarki: 'Ograniczenie przeglądarki:',
+    tr_nie_maja_dostepu: 'nie mają dostępu',
+    tr_twoim_w_asnym_po: 'Twoim własnym połączeniu',
+    tr_szarosc: 'SZAROŚĆ',
+    tr_w_asny: 'WŁASNY',
+    tr_srodkowy: '⚙️ Środkowy',
+    tr_ruszaj_mysza_po_polu: 'Ruszaj myszą po polu',
+    tr_slad: 'Ślad:',
+    tr_w: 'Wł',
+    tr_heatmapa_klikniec_klikaj_po: 'HEATMAPA KLIKNIĘĆ — klikaj po polu żeby zobaczyć wzorzec',
+    tr_klikniec_0: 'Kliknięć: 0',
+    tr_nacisnij_start_zeby_zaczac: 'Naciśnij START żeby zacząć',
+    tr_watki_logiczne: 'wątki logiczne',
+    tr_gb_wg_przegladarki: 'GB (wg przeglądarki)',
+    tr_rozdzielczosc: 'rozdzielczość',
+    tr_adowanie_informacji: 'Ładowanie informacji...',
+    tr_wybor: '🎲 Wybór ← →',
+    tr_wiewiorka: '🐿️ Wiewiórka',
+    tr_chor: '🎶 Chór',
+    tr_anio: '😇 Anioł',
+    tr_potwor: '🦖 Potwór',
+    tr_kreskowka: '🎭 Kreskówka',
+    tr_azienka: '🚿 Łazienka',
+    tr_g_osnosc: '🔊 Głośność',
+    tr_orygina: 'ORYGINAŁ',
+    tr_szk_o: '🥂 Szkło',
+    tr_chor_2: '🎤 Chór',
+    tr_zaba: '🐸 Żaba',
+    tr_wy: '🔇 Wył',
+    tr_nacisnij_start_potem_naciskaj: 'Naciśnij START, potem naciskaj klawisze',
+    tr_w_acz_ods_uch: 'Włącz odsłuch głosu',
+    tr_wy_acz: 'Wyłącz',
+    tr_efekty_g_osu: 'Efekty głosu',
+    tr_snr_stosunek_sygna_szum: 'SNR (stosunek sygnał/szum)',
+    tr_czekam_na_dzwiek: 'Czekam na dźwięk...',
+    tr_region_wojewodztwo: 'REGION / WOJEWÓDZTWO',
+    tr_protoko_http: 'PROTOKÓŁ HTTP',
+    tr_nacisnij_start: 'Naciśnij START',
+    tr_raw_nag_owek: '📋 RAW NAGŁÓWEK',
+    tr_analiza_bezpieczenstwa: '🔎 ANALIZA BEZPIECZEŃSTWA',
+    tr_inne_nag_owki_bezpieczenstwa: '🔒 INNE NAGŁÓWKI BEZPIECZEŃSTWA',
+    tr_dzia_a_bezposrednio_tylko: '⚠️ Działa bezpośrednio tylko dla tej samej domeny — dla obcych URL użyj zakładki 🌐 Proxy',
+    tr_skanuje_dowolna_strone_przez: 'Skanuje dowolną stronę przez publiczne proxy CORS — omija blokadę nagłówków cross-origin.',
+    tr_raw_nag_owek_2: '📋 RAW NAGŁÓWEK',
+    tr_nag_owki_bezpieczenstwa: '🔒 NAGŁÓWKI BEZPIECZEŃSTWA',
+    tr_zaznacz_co_chcesz_zezwolic: 'Zaznacz co chcesz zezwolić — nagłówek CSP wygeneruje się automatycznie.',
+    tr_opcje_bezpieczenstwa: '🔒 OPCJE BEZPIECZEŃSTWA',
+    tr_wygenerowany_nag_owek: '✨ WYGENEROWANY NAGŁÓWEK',
+    tr_ph_ai_input: 'Napisz wiadomość... (Enter aby wysłać)',
+    ai_typing: 'Pisze...',
+    ai_ready_status: 'Gotowy',
+    ai_msg_count: 'wiad.',
   },
   en: {
     ld_init: 'INITIALIZING...', ld_modules: 'LOADING MODULES...', ld_camera: 'CHECKING CAMERA...', ld_ready: 'READY!',
@@ -13026,6 +13109,89 @@ const I18N = {
     toast_csp_header_copied: 'CSP-заголовок скопирован',
     toast_headers_copied: 'Файл _headers для Netlify скопирован',
     toast_err_generic: 'Ошибка',
+    tr_odswiezanie_monitora: 'ЧАСТОТА ОБНОВЛЕНИЯ МОНИТОРА',
+    tr_stabilnosc_fps: 'СТАБИЛЬНОСТЬ FPS',
+    tr_klasy_p_ynnosci: '📺 КЛАССЫ ПЛАВНОСТИ',
+    tr_rozk_ad_fps: '📊 РАСПРЕДЕЛЕНИЕ FPS',
+    tr_kliknij_start_aby_rozpoczac: 'Нажми START, чтобы начать измерение FPS',
+    tr_wyczysc: '🗑 Очистить',
+    tr_wskazowka_napisz_jestem_imie: 'Подсказка: напиши "Меня зовут [имя]", и я тебя запомню!',
+    tr_ze_stron_https_netlify: '⚠️ На страницах HTTPS (Netlify) браузер блокирует сканирование локальной сети. Сканер показывает то, что реально можно обнаружить: твой IP, роутер и другие устройства, найденные через WebRTC + обратный DNS.',
+    tr_twoje_urzadzenie: 'ТВОЁ УСТРОЙСТВО',
+    tr_siec: 'СЕТЬ',
+    tr_skanuj_siec: '▶ СКАНИРОВАТЬ СЕТЬ',
+    tr_znalezione_urzadzenia: 'НАЙДЕННЫЕ УСТРОЙСТВА',
+    tr_kliknij_zeby_pobrac_kolor: '👆 нажми, чтобы взять цвет',
+    tr_w_acz_kamere: '▶ ВКЛЮЧИТЬ КАМЕРУ',
+    tr_kolor_do_usuniecia: '🎯 ЦВЕТ ДЛЯ УДАЛЕНИЯ',
+    tr_w_asny_kolor_lub: 'Свой цвет или нажми на изображение',
+    tr_jasnosc: 'Яркость',
+    tr_jakosc_usuwania: '⚙️ КАЧЕСТВО УДАЛЕНИЯ',
+    tr_wyg_adzenie: 'Сглаживание',
+    tr_t_o_zastepcze: '🖼️ ЗАМЕНА ФОНА',
+    tr_wy_aczona: '— (выключена)',
+    tr_krawedzie: '✏️ Края',
+    tr_b_yskawica: '⚡ Молния',
+    tr_babelki: '🫧 Пузыри',
+    tr_sr_fps: 'ср. — fps',
+    tr_odswiez: '↺ Обновить',
+    tr_adowanie: 'Загрузка...',
+    tr_bateria_adowanie: 'БАТАРЕЯ / ЗАРЯДКА',
+    tr_adowanie_2: 'Загрузка...',
+    tr_obciazenie_cpu_estymacja_przez: 'НАГРУЗКА ЦП (ОЦЕНКА ПО FPS)',
+    tr_historia_obciazenia_cpu_ostatnie: 'ИСТОРИЯ НАГРУЗКИ ЦП (последние 60с)',
+    tr_ograniczenie_przegladarki: 'Ограничение браузера:',
+    tr_nie_maja_dostepu: 'не имеют доступа',
+    tr_twoim_w_asnym_po: 'твоём собственном соединении',
+    tr_szarosc: 'СЕРЫЙ',
+    tr_w_asny: 'СВОЙ',
+    tr_srodkowy: '⚙️ Средняя',
+    tr_ruszaj_mysza_po_polu: 'Двигай мышью по полю',
+    tr_slad: 'След:',
+    tr_w: 'Вкл',
+    tr_heatmapa_klikniec_klikaj_po: 'ТЕПЛОВАЯ КАРТА КЛИКОВ — кликай по полю, чтобы увидеть узор',
+    tr_klikniec_0: 'Кликов: 0',
+    tr_nacisnij_start_zeby_zaczac: 'Нажми START, чтобы начать',
+    tr_watki_logiczne: 'логических потоков',
+    tr_gb_wg_przegladarki: 'ГБ (по данным браузера)',
+    tr_rozdzielczosc: 'разрешение',
+    tr_adowanie_informacji: 'Загрузка информации...',
+    tr_wybor: '🎲 Выбор ← →',
+    tr_wiewiorka: '🐿️ Белка',
+    tr_chor: '🎶 Хор',
+    tr_anio: '😇 Ангел',
+    tr_potwor: '🦖 Монстр',
+    tr_kreskowka: '🎭 Мультяшка',
+    tr_azienka: '🚿 Ванная',
+    tr_g_osnosc: '🔊 Громкость',
+    tr_orygina: 'ОРИГИНАЛ',
+    tr_szk_o: '🥂 Стекло',
+    tr_chor_2: '🎤 Хор',
+    tr_zaba: '🐸 Лягушка',
+    tr_wy: '🔇 Выкл',
+    tr_nacisnij_start_potem_naciskaj: 'Нажми START, затем нажимай клавиши',
+    tr_w_acz_ods_uch: 'Включить прослушку голоса',
+    tr_wy_acz: 'Выключить',
+    tr_efekty_g_osu: 'Голосовые эффекты',
+    tr_snr_stosunek_sygna_szum: 'SNR (соотношение сигнал/шум)',
+    tr_czekam_na_dzwiek: 'Ожидание звука...',
+    tr_region_wojewodztwo: 'РЕГИОН / ОБЛАСТЬ',
+    tr_protoko_http: 'ПРОТОКОЛ HTTP',
+    tr_nacisnij_start: 'Нажми START',
+    tr_raw_nag_owek: '📋 СЫРОЙ ЗАГОЛОВОК',
+    tr_analiza_bezpieczenstwa: '🔎 АНАЛИЗ БЕЗОПАСНОСТИ',
+    tr_inne_nag_owki_bezpieczenstwa: '🔒 ДРУГИЕ ЗАГОЛОВКИ БЕЗОПАСНОСТИ',
+    tr_dzia_a_bezposrednio_tylko: '⚠️ Работает напрямую только для того же домена — для чужих URL используй вкладку 🌐 Proxy',
+    tr_skanuje_dowolna_strone_przez: 'Сканирует любой сайт через публичный CORS-прокси — обходит блокировку cross-origin заголовков.',
+    tr_raw_nag_owek_2: '📋 СЫРОЙ ЗАГОЛОВОК',
+    tr_nag_owki_bezpieczenstwa: '🔒 ЗАГОЛОВКИ БЕЗОПАСНОСТИ',
+    tr_zaznacz_co_chcesz_zezwolic: 'Отметь, что хочешь разрешить — заголовок CSP сформируется автоматически.',
+    tr_opcje_bezpieczenstwa: '🔒 ПАРАМЕТРЫ БЕЗОПАСНОСТИ',
+    tr_wygenerowany_nag_owek: '✨ СГЕНЕРИРОВАННЫЙ ЗАГОЛОВОК',
+    tr_ph_ai_input: 'Напиши сообщение... (Enter чтобы отправить)',
+    ai_typing: 'Печатает...',
+    ai_ready_status: 'Готов',
+    ai_msg_count: 'сообщ.',
   },
   zh: {
     ld_init: '正在初始化...', ld_modules: '正在加载模块...', ld_camera: '正在检测摄像头...', ld_ready: '准备就绪！',
@@ -14777,12 +14943,12 @@ document.addEventListener('click', function(e) {
   if(!screen) return;
 
   const steps = [
-    [5,  'ld_init',    200],
-    [20, 'ld_modules', 1500],
-    [40, 'ld_modules', 3500],
-    [60, 'ld_camera',  5500],
-    [80, 'ld_camera',  7500],
-    [95, 'ld_ready',   9000],
+    [5,  'ld_init',    100],
+    [20, 'ld_modules', 750],
+    [40, 'ld_modules', 1750],
+    [60, 'ld_camera',  2750],
+    [80, 'ld_camera',  3750],
+    [95, 'ld_ready',   4500],
   ];
   steps.forEach(([pct, key, delay]) => {
     setTimeout(() => {
@@ -14800,14 +14966,14 @@ document.addEventListener('click', function(e) {
         screen.style.visibility = 'hidden';
         setLang(currentLang);
       }, 600);
-    }, 10000); // 10 sekund
+    }, 5000); // 5 sekund
   }
 
   if(document.readyState === 'complete') {
     hideLoader();
   } else {
     window.addEventListener('load', hideLoader);
-    setTimeout(hideLoader, 10500);
+    setTimeout(hideLoader, 5500);
   }
 })();
 

@@ -132,7 +132,7 @@
         <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;">FRAME RATE BENCHMARK · MONITOR DETECTOR</div>
       </div>
       <div style="margin-left:auto;text-align:right;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.25);">ODŚWIEŻANIE MONITORA</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.25);" data-i18n="tr_odswiezanie_monitora">ODŚWIEŻANIE MONITORA</div>
         <div id="fpsMonitorHz" style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#a78bfa;">—</div>
       </div>
     </div>
@@ -181,7 +181,7 @@
     <div style="display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
       <div style="flex:1;min-width:180px;">
         <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);">STABILNOŚĆ FPS</span>
+          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);" data-i18n="tr_stabilnosc_fps">STABILNOŚĆ FPS</span>
           <span id="fpsStability" style="font-family:'Space Mono',monospace;font-size:8px;color:#f59e0b;">—</span>
         </div>
         <div style="height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;">
@@ -237,7 +237,7 @@
         <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.2);margin-top:2px;">ms (½ czasu klatki)</div>
       </div>
       <div style="flex:1;min-width:160px;padding:10px 14px;border-radius:10px;background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.15);">
-        <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.25);letter-spacing:2px;margin-bottom:6px;">📺 KLASY PŁYNNOŚCI</div>
+        <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.25);letter-spacing:2px;margin-bottom:6px;" data-i18n="tr_klasy_p_ynnosci">📺 KLASY PŁYNNOŚCI</div>
         <div id="fpsSmoothnessClass" style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#a78bfa;line-height:1.4;">—</div>
       </div>
     </div>
@@ -265,7 +265,7 @@
     <!-- FPS Distribution Histogram -->
     <div style="margin-bottom:14px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-        <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;">📊 ROZKŁAD FPS</span>
+        <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;" data-i18n="tr_rozk_ad_fps">📊 ROZKŁAD FPS</span>
         <span style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.2);">% klatek w zakresie</span>
       </div>
       <div id="fpsHistogram" style="display:flex;gap:4px;align-items:flex-end;height:52px;background:rgba(0,5,15,0.7);border-radius:8px;padding:6px 8px;border:1px solid rgba(255,255,255,0.05);">
@@ -285,7 +285,7 @@
     <div id="fpsTierRow" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;"></div>
 
     <!-- Rating -->
-    <div id="fpsRating" style="font-family:'Space Mono',monospace;font-size:10px;text-align:center;padding:12px 16px;border-radius:10px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.12);margin-bottom:14px;color:rgba(255,255,255,0.4);line-height:1.6;">
+    <div id="fpsRating" style="font-family:'Space Mono',monospace;font-size:10px;text-align:center;padding:12px 16px;border-radius:10px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.12);margin-bottom:14px;color:rgba(255,255,255,0.4);line-height:1.6;" data-i18n="tr_kliknij_start_aby_rozpoczac">
       Kliknij START aby rozpocząć pomiar FPS
     </div>
 
@@ -357,7 +357,7 @@
           <option value="nl-NL" style="background:#1a0a2e;color:#fff;">🇳🇱 NL</option>
           <option value="pt-PT" style="background:#1a0a2e;color:#fff;">🇵🇹 PT</option>
         </select>
-        <button onclick="aiBotClear()" title="Wyczyść czat" style="padding:5px 8px;border-radius:7px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.3);font-size:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#ff4d6d';this.style.borderColor='rgba(255,77,109,0.4)'" onmouseout="this.style.color='rgba(255,255,255,0.3)';this.style.borderColor='rgba(255,255,255,0.1)'">🗑 Wyczyść</button>
+        <button onclick="aiBotClear()" title="Wyczyść czat" style="padding:5px 8px;border-radius:7px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.3);font-size:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#ff4d6d';this.style.borderColor='rgba(255,77,109,0.4)'" onmouseout="this.style.color='rgba(255,255,255,0.3)';this.style.borderColor='rgba(255,255,255,0.1)'" data-i18n="tr_wyczysc">🗑 Wyczyść</button>
         <button class="modal-close" onclick="closeAiBot()">✕</button>
       </div>
     </div>
@@ -366,7 +366,7 @@
     <div id="aiBotMessages" style="flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;">
       <div class="ai-msg ai-msg-bot">
         <div class="ai-avatar">🤖</div>
-        <div class="ai-bubble-bot">Cześć! 👋 Jestem AI asystentem <strong style="color:#a855f7;">StudioTest</strong>.<br>Pytaj o dowolną funkcję aplikacji, albo po prostu pogadajmy! 😊<br><br>🌐 <a href="https://charming-concha-550970.netlify.app" target="_blank" rel="noopener" style="color:#00f5a0;font-weight:700;text-decoration:none;">charming-concha-550970.netlify.app</a><br><br>💡 <em style="color:rgba(255,255,255,0.4);font-size:9px;">Wskazówka: napisz "Jestem [imię]" a zapamiętam Cię!</em></div>
+        <div class="ai-bubble-bot">Cześć! 👋 Jestem AI asystentem <strong style="color:#a855f7;">StudioTest</strong>.<br>Pytaj o dowolną funkcję aplikacji, albo po prostu pogadajmy! 😊<br><br>🌐 <a href="https://charming-concha-550970.netlify.app" target="_blank" rel="noopener" style="color:#00f5a0;font-weight:700;text-decoration:none;">charming-concha-550970.netlify.app</a><br><br>💡 <em style="color:rgba(255,255,255,0.4);font-size:9px;" data-i18n="tr_wskazowka_napisz_jestem_imie">Wskazówka: napisz "Jestem [imię]" a zapamiętam Cię!</em></div>
       </div>
     </div>
 
@@ -377,7 +377,7 @@
 
     <!-- Input -->
     <div style="padding:10px 16px 14px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:8px;flex-shrink:0;align-items:center;">
-      <input id="aiBotInput" type="text" placeholder="Napisz wiadomość... (Enter aby wysłać)"
+      <input id="aiBotInput" type="text" data-i18n-ph="tr_ph_ai_input" placeholder="Napisz wiadomość... (Enter aby wysłać)"
         style="flex:1;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.25);border-radius:12px;padding:11px 16px;color:#fff;font-family:'Space Mono',monospace;font-size:11px;outline:none;transition:all .2s;"
         onfocus="this.style.borderColor='#a855f7';this.style.background='rgba(168,85,247,0.12)';this.style.boxShadow='0 0 0 3px rgba(168,85,247,0.1)'"
         onblur="this.style.borderColor='rgba(168,85,247,0.25)';this.style.background='rgba(168,85,247,0.08)';this.style.boxShadow='none'"
@@ -462,20 +462,20 @@
     <h2>📡 <span style="color:#06b6d4;">Network Scanner</span></h2>
 
     <!-- Info banners -->
-    <div style="background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:10px;padding:10px 14px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(6,182,212,0.7);margin-bottom:14px;line-height:1.7;">
+    <div style="background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.2);border-radius:10px;padding:10px 14px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(6,182,212,0.7);margin-bottom:14px;line-height:1.7;" data-i18n="tr_ze_stron_https_netlify">
       ⚠️ Ze stron HTTPS (Netlify) przeglądarka blokuje skanowanie sieci lokalnej. Skaner pokazuje co realnie można wykryć: Twoje IP, router i inne urządzenia wykryte przez WebRTC + odwrócone DNS.
     </div>
 
     <!-- Twoje info -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;" id="nscanMyInfo">
       <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;">TWOJE URZĄDZENIE</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_twoje_urzadzenie">TWOJE URZĄDZENIE</div>
         <div id="nscanMyIp"  style="font-family:'Space Mono',monospace;font-size:11px;color:#06b6d4;">— wykrywanie...</div>
         <div id="nscanMyIp6" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:3px;"></div>
         <div id="nscanMyGateway" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px;"></div>
       </div>
       <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;">SIEĆ</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_siec">SIEĆ</div>
         <div id="nscanSubnet"  style="font-family:'Space Mono',monospace;font-size:11px;color:#a855f7;">—</div>
         <div id="nscanClass"   style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px;"></div>
         <div id="nscanConnect" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px;"></div>
@@ -484,7 +484,7 @@
 
     <!-- Skan przycisk + progress -->
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-      <button id="nscanBtn" onclick="nscanRun()" style="padding:10px 20px;border-radius:10px;border:1px solid #06b6d4;background:rgba(6,182,212,0.1);color:#06b6d4;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;cursor:pointer;letter-spacing:1px;transition:all .15s;">▶ SKANUJ SIEĆ</button>
+      <button id="nscanBtn" onclick="nscanRun()" style="padding:10px 20px;border-radius:10px;border:1px solid #06b6d4;background:rgba(6,182,212,0.1);color:#06b6d4;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;cursor:pointer;letter-spacing:1px;transition:all .15s;" data-i18n="tr_skanuj_siec">▶ SKANUJ SIEĆ</button>
       <div style="flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
         <div id="nscanBar" style="height:100%;width:0%;background:linear-gradient(90deg,#06b6d4,#a855f7);border-radius:2px;transition:width 0.3s;"></div>
       </div>
@@ -492,7 +492,7 @@
     </div>
 
     <!-- Wyniki urządzeń -->
-    <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;">ZNALEZIONE URZĄDZENIA</div>
+    <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_znalezione_urzadzenia">ZNALEZIONE URZĄDZENIA</div>
     <div id="nscanDevices" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;max-height:520px;overflow-y:auto;"></div>
   </div>
 </div>
@@ -513,18 +513,18 @@
         <!-- FPS counter -->
         <div id="chromaFps" style="position:absolute;top:8px;left:8px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(0,245,160,0.6);background:rgba(0,0,0,0.5);padding:2px 6px;border-radius:4px;display:none;"></div>
         <!-- Color picked indicator -->
-        <div id="chromaPickIndicator" style="position:absolute;bottom:8px;left:8px;font-family:'Space Mono',monospace;font-size:9px;color:#22c55e;background:rgba(0,0,0,0.6);padding:3px 8px;border-radius:6px;display:none;">👆 kliknij żeby pobrać kolor</div>
+        <div id="chromaPickIndicator" style="position:absolute;bottom:8px;left:8px;font-family:'Space Mono',monospace;font-size:9px;color:#22c55e;background:rgba(0,0,0,0.6);padding:3px 8px;border-radius:6px;display:none;" data-i18n="tr_kliknij_zeby_pobrac_kolor">👆 kliknij żeby pobrać kolor</div>
       </div>
 
       <!-- Panel kontrolny -->
       <div style="display:flex;flex-direction:column;gap:8px;overflow-y:auto;">
 
         <!-- Kamera -->
-        <button id="chromaCamBtn" onclick="chromaToggleCam()" class="chroma-btn chroma-btn-green">▶ WŁĄCZ KAMERĘ</button>
+        <button id="chromaCamBtn" onclick="chromaToggleCam()" class="chroma-btn chroma-btn-green" data-i18n="tr_w_acz_kamere">▶ WŁĄCZ KAMERĘ</button>
 
         <!-- Preset kolory tła -->
         <div class="chroma-panel">
-          <div class="chroma-label">🎯 KOLOR DO USUNIĘCIA</div>
+          <div class="chroma-label" data-i18n="tr_kolor_do_usuniecia">🎯 KOLOR DO USUNIĘCIA</div>
           <div style="display:flex;gap:5px;margin-bottom:8px;flex-wrap:wrap;">
             <button onclick="chromaSetColor(0,177,64)"    class="chroma-color-swatch" style="background:#00b140;" title="Zielony ekran"></button>
             <button onclick="chromaSetColor(0,120,200)"   class="chroma-color-swatch" style="background:#0078c8;" title="Niebieski ekran"></button>
@@ -536,7 +536,7 @@
           <div style="display:flex;align-items:center;gap:8px;">
             <input type="color" id="chromaColorPick" value="#00b140" oninput="chromaPickColor(this.value)" style="width:38px;height:38px;border:none;border-radius:8px;cursor:pointer;background:none;padding:0;">
             <div style="flex:1;">
-              <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);">Własny kolor lub kliknij na obraz</div>
+              <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);" data-i18n="tr_w_asny_kolor_lub">Własny kolor lub kliknij na obraz</div>
               <div id="chromaColorVal" style="font-family:'Space Mono',monospace;font-size:11px;color:#22c55e;font-weight:700;">#00b140</div>
             </div>
             <div id="chromaColorPreview" style="width:28px;height:28px;border-radius:6px;border:2px solid rgba(255,255,255,0.2);background:#00b140;"></div>
@@ -547,7 +547,7 @@
         <div class="chroma-panel">
           <div class="chroma-label">💡 OBRAZ</div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);width:72px;">Jasność</span>
+            <span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);width:72px;" data-i18n="tr_jasnosc">Jasność</span>
             <input type="range" id="chromaBright" min="-100" max="100" value="0" style="flex:1;accent-color:#22c55e;" oninput="chromaUpdateSliders()">
             <span id="chromaBrightVal" style="font-family:'Space Mono',monospace;font-size:8px;color:var(--fg);width:28px;">0</span>
           </div>
@@ -560,14 +560,14 @@
 
         <!-- Tolerancja + Wygładzanie -->
         <div class="chroma-panel">
-          <div class="chroma-label">⚙️ JAKOŚĆ USUWANIA</div>
+          <div class="chroma-label" data-i18n="tr_jakosc_usuwania">⚙️ JAKOŚĆ USUWANIA</div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
             <span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);width:72px;">Tolerancja</span>
             <input type="range" id="chromaTol" min="5" max="150" value="50" style="flex:1;accent-color:#22c55e;" oninput="chromaUpdateSliders()">
             <span id="chromaTolVal" style="font-family:'Space Mono',monospace;font-size:9px;color:#22c55e;min-width:22px;">50</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);width:72px;">Wygładzenie</span>
+            <span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);width:72px;" data-i18n="tr_wyg_adzenie">Wygładzenie</span>
             <input type="range" id="chromaSmooth" min="0" max="40" value="8" style="flex:1;accent-color:#a855f7;" oninput="chromaUpdateSliders()">
             <span id="chromaSmoothVal" style="font-family:'Space Mono',monospace;font-size:9px;color:#a855f7;min-width:22px;">8</span>
           </div>
@@ -580,7 +580,7 @@
 
         <!-- Tło zastępcze -->
         <div class="chroma-panel">
-          <div class="chroma-label">🖼️ TŁO ZASTĘPCZE</div>
+          <div class="chroma-label" data-i18n="tr_t_o_zastepcze">🖼️ TŁO ZASTĘPCZE</div>
           <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;">
             <button onclick="chromaBg('transparent')" id="chromaBgTransp" class="chroma-bg-btn active-bg">⬛ Brak</button>
             <button onclick="chromaBg('color')"       id="chromaBgColor"  class="chroma-bg-btn">🎨 Kolor</button>
@@ -725,7 +725,7 @@
       <button class="fps-btn" id="fps-30"  title="30 klatek/s (standard)" onclick="setCamFps(30,this)">30</button>
       <button class="fps-btn active" id="fps-60"  title="60 klatek/s (płynny)" onclick="setCamFps(60,this)">60</button>
       <button class="fps-btn" id="fps-120" title="120 klatek/s (wymaga obsługi kamery)" onclick="setCamFps(120,this)">120</button>
-      <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-left:auto;" id="camResInfo">— (wyłączona)</span>
+      <span style="font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-left:auto;" id="camResInfo" data-i18n="tr_wy_aczona">— (wyłączona)</span>
     </div>
   </div>
 
@@ -1000,7 +1000,7 @@
         <button class="filter-btn" id="fx-datamosh"  onclick="setFx('datamosh',this)">💾 Datamosh</button>
         <button class="filter-btn" id="fx-hologram"  onclick="setFx('hologram',this)">👾 Hologram</button>
         <button class="filter-btn" id="fx-emboss"    onclick="setFx('emboss',this)">⬜ Emboss</button>
-        <button class="filter-btn" id="fx-edge"      onclick="setFx('edge',this)">✏️ Krawędzie</button>
+        <button class="filter-btn" id="fx-edge"      onclick="setFx('edge',this)" data-i18n="tr_krawedzie">✏️ Krawędzie</button>
         <button class="filter-btn" id="fx-posterize" onclick="setFx('posterize',this)">🎨 Posterize</button>
         <button class="filter-btn" id="fx-tilt"      onclick="setFx('tilt',this)">📷 Tilt-Shift</button>
         <button class="filter-btn" id="fx-comic"     onclick="setFx('comic',this)">💥 Komiks</button>
@@ -1008,11 +1008,11 @@
         <button class="filter-btn" id="fx-neon3"     onclick="setFx('neon3',this)">🟣 Neon glow</button>
         <button class="filter-btn" id="fx-hearts"    onclick="setFx('hearts',this)">❤️ Serduszka</button>
         <button class="filter-btn" id="fx-confetti"  onclick="setFx('confetti',this)">🎊 Konfetti</button>
-        <button class="filter-btn" id="fx-lightning" onclick="setFx('lightning',this)">⚡ Błyskawica</button>
+        <button class="filter-btn" id="fx-lightning" onclick="setFx('lightning',this)" data-i18n="tr_b_yskawica">⚡ Błyskawica</button>
         <button class="filter-btn" id="fx-negative"  onclick="setFx('negative',this)">🔲 Negatyw</button>
         <button class="filter-btn" id="fx-oldfilm"   onclick="setFx('oldfilm',this)">🎞️ Stary film</button>
         <button class="filter-btn" id="fx-split"     onclick="setFx('split',this)">↔️ Split screen</button>
-        <button class="filter-btn" id="fx-bubble"    onclick="setFx('bubble',this)">🫧 Bąbelki</button>
+        <button class="filter-btn" id="fx-bubble"    onclick="setFx('bubble',this)" data-i18n="tr_babelki">🫧 Bąbelki</button>
         <button class="filter-btn" id="fx-none"      onclick="setFx('none',this)"><span data-i18n="fx_off">✖ Wyłącz</span></button>
       </div>
     </div>
@@ -1364,7 +1364,7 @@
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
         <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;">📈 WYKRES FPS (ostatnie 120 klatek)</span>
-        <span style="font-family:'Space Mono',monospace;font-size:9px;color:#f5c400;" id="pmFpsAvg">śr. — fps</span>
+        <span style="font-family:'Space Mono',monospace;font-size:9px;color:#f5c400;" id="pmFpsAvg" data-i18n="tr_sr_fps">śr. — fps</span>
       </div>
       <canvas id="pmFpsCanvas" height="80" style="width:100%;display:block;border-radius:8px;"></canvas>
     </div>
@@ -1516,7 +1516,7 @@
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:14px;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
         <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;">🌡️ TEMPERATURY I STAN TERMICZNY</span>
-        <button onclick="pmRefreshThermal()" style="font-family:'Space Mono',monospace;font-size:9px;background:rgba(255,77,109,0.1);border:1px solid rgba(255,77,109,0.25);color:#ff4d6d;padding:4px 12px;border-radius:6px;cursor:pointer;">↺ Odśwież</button>
+        <button onclick="pmRefreshThermal()" style="font-family:'Space Mono',monospace;font-size:9px;background:rgba(255,77,109,0.1);border:1px solid rgba(255,77,109,0.25);color:#ff4d6d;padding:4px 12px;border-radius:6px;cursor:pointer;" data-i18n="tr_odswiez">↺ Odśwież</button>
       </div>
 
       <!-- Stan termiczny systemu (Thermal API) -->
@@ -1524,18 +1524,18 @@
         <div style="background:rgba(255,77,109,0.05);border:1px solid rgba(255,77,109,0.15);border-radius:10px;padding:12px;text-align:center;">
           <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;">STAN TERMICZNY CPU</div>
           <div id="pmThermalState" style="font-family:'Syne',sans-serif;font-size:22px;font-weight:900;color:#ff4d6d;line-height:1;">—</div>
-          <div id="pmThermalLabel" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:4px;">Ładowanie...</div>
+          <div id="pmThermalLabel" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:4px;" data-i18n="tr_adowanie">Ładowanie...</div>
         </div>
         <div style="background:rgba(245,196,0,0.05);border:1px solid rgba(245,196,0,0.15);border-radius:10px;padding:12px;text-align:center;">
-          <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;">BATERIA / ŁADOWANIE</div>
+          <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;" data-i18n="tr_bateria_adowanie">BATERIA / ŁADOWANIE</div>
           <div id="pmBatteryPct" style="font-family:'Syne',sans-serif;font-size:22px;font-weight:900;color:#f5c400;line-height:1;">—</div>
-          <div id="pmBatteryLabel" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:4px;">Ładowanie...</div>
+          <div id="pmBatteryLabel" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-top:4px;" data-i18n="tr_adowanie_2">Ładowanie...</div>
         </div>
       </div>
 
       <!-- Obciążenie CPU (estymacja przez FPS i workers) -->
       <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;margin-bottom:8px;">OBCIĄŻENIE CPU (ESTYMACJA PRZEZ FPS)</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;margin-bottom:8px;" data-i18n="tr_obciazenie_cpu_estymacja_przez">OBCIĄŻENIE CPU (ESTYMACJA PRZEZ FPS)</div>
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;">
             <div id="pmCpuLoadBar" style="height:100%;width:0%;border-radius:4px;background:linear-gradient(90deg,#00f5a0,#f5c400,#ff4d6d);transition:width 0.5s;"></div>
@@ -1553,7 +1553,7 @@
 
       <!-- Historia stanu termicznego -->
       <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:12px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;margin-bottom:8px;">HISTORIA OBCIĄŻENIA CPU (ostatnie 60s)</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:1px;margin-bottom:8px;" data-i18n="tr_historia_obciazenia_cpu_ostatnie">HISTORIA OBCIĄŻENIA CPU (ostatnie 60s)</div>
         <canvas id="pmThermalCanvas" height="60" style="width:100%;display:block;border-radius:6px;"></canvas>
         <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.15);margin-top:4px;text-align:center;" id="pmThermalNote"></div>
       </div>
@@ -1572,7 +1572,7 @@
 
     <!-- Important note -->
     <div style="background:rgba(245,196,0,0.08);border:1px solid rgba(245,196,0,0.25);border-radius:12px;padding:12px 16px;font-family:'Space Mono',monospace;font-size:10px;color:#f5c400;line-height:1.7;">
-      <span id="wifiLimitText">⚠️ <strong>Ograniczenie przeglądarki:</strong> Strony internetowe z powodów bezpieczeństwa <strong>nie mają dostępu</strong> do listy urządzeń w sieci lokalnej. Widoczne są tylko informacje o <strong>Twoim własnym połączeniu</strong>. Aby skanować sieć potrzebna byłaby aplikacja natywna (np. Advanced IP Scanner).</span>
+      <span id="wifiLimitText">⚠️ <strong data-i18n="tr_ograniczenie_przegladarki">Ograniczenie przeglądarki:</strong> Strony internetowe z powodów bezpieczeństwa <strong data-i18n="tr_nie_maja_dostepu">nie mają dostępu</strong> do listy urządzeń w sieci lokalnej. Widoczne są tylko informacje o <strong data-i18n="tr_twoim_w_asnym_po">Twoim własnym połączeniu</strong>. Aby skanować sieć potrzebna byłaby aplikacja natywna (np. Advanced IP Scanner).</span>
     </div>
 
     <!-- Your device info -->
@@ -1650,7 +1650,7 @@
     <button class="dt-color-btn" style="background:#8b4513;" onclick="dtSetColor('#8b4513',this)" title="Brązowy"></button>
 
     <!-- Skala szarości -->
-    <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.45);letter-spacing:2px;flex-shrink:0;margin-top:2px;">SZAROŚĆ</div>
+    <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.45);letter-spacing:2px;flex-shrink:0;margin-top:2px;" data-i18n="tr_szarosc">SZAROŚĆ</div>
     <button class="dt-color-btn" style="background:#0d0d0d;" onclick="dtSetColor('#0d0d0d',this)" title="5%"></button>
     <button class="dt-color-btn" style="background:#1a1a1a;" onclick="dtSetColor('#1a1a1a',this)" title="10%"></button>
     <button class="dt-color-btn" style="background:#333333;" onclick="dtSetColor('#333333',this)" title="20%"></button>
@@ -1663,7 +1663,7 @@
     <button class="dt-color-btn" style="background:#e6e6e6;border:1px solid rgba(255,255,255,0.2);" onclick="dtSetColor('#e6e6e6',this)" title="90%"></button>
 
     <!-- Custom picker -->
-    <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.45);letter-spacing:2px;flex-shrink:0;margin-top:2px;">WŁASNY</div>
+    <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.45);letter-spacing:2px;flex-shrink:0;margin-top:2px;" data-i18n="tr_w_asny">WŁASNY</div>
     <label style="position:relative;width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,0.3);cursor:pointer;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;" title="Własny kolor">
       <span style="font-size:12px;">🎨</span>
       <input type="color" id="dtCustomColor" value="#ff6600"
@@ -1831,7 +1831,7 @@
             <div style="display:flex;flex-direction:column;gap:4px;">
               <div class="mouse-btn-key" id="mbtn-0" style="text-align:left;font-size:10px;">🖱 Lewy (LPM)</div>
               <div class="mouse-btn-key" id="mbtn-2" style="text-align:left;font-size:10px;">🖱 Prawy (PPM)</div>
-              <div class="mouse-btn-key" id="mbtn-1" style="text-align:left;font-size:10px;">⚙️ Środkowy</div>
+              <div class="mouse-btn-key" id="mbtn-1" style="text-align:left;font-size:10px;" data-i18n="tr_srodkowy">⚙️ Środkowy</div>
               <div class="mouse-btn-key" id="mbtn-scroll" style="text-align:left;font-size:10px;">🔄 Scroll</div>
               <div class="mouse-btn-key" id="mbtn-3" style="text-align:left;font-size:10px;">◀ Boczny 4</div>
               <div class="mouse-btn-key" id="mbtn-4" style="text-align:left;font-size:10px;">▶ Boczny 5</div>
@@ -1843,24 +1843,24 @@
       <!-- Controls -->
       <div style="display:flex;gap:10px;align-items:center;">
         <button class="kb-ctrl-btn" onclick="mReset()">↺ Reset</button>
-        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);" id="mHint">Ruszaj myszą po polu</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);" id="mHint" data-i18n="tr_ruszaj_mysza_po_polu">Ruszaj myszą po polu</div>
         <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
-          <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);">Ślad:</div>
-          <button class="kb-ctrl-btn" id="mTrailBtn" onclick="mToggleTrail()">Wł</button>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);" data-i18n="tr_slad">Ślad:</div>
+          <button class="kb-ctrl-btn" id="mTrailBtn" onclick="mToggleTrail()" data-i18n="tr_w">Wł</button>
         </div>
       </div>
     </div>
 
     <!-- TAB: Heatmapa -->
     <div class="mouse-tab-panel" id="mtab-heat">
-      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;">HEATMAPA KLIKNIĘĆ — klikaj po polu żeby zobaczyć wzorzec</div>
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;" data-i18n="tr_heatmapa_klikniec_klikaj_po">HEATMAPA KLIKNIĘĆ — klikaj po polu żeby zobaczyć wzorzec</div>
       <div class="heatmap-wrap" id="heatmapWrap">
         <canvas id="heatmapCanvas" height="300"></canvas>
         <div id="heatmapCursor" style="position:absolute;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.7);border:1px solid white;pointer-events:none;transform:translate(-50%,-50%);left:50%;top:50%;"></div>
       </div>
       <div style="display:flex;gap:10px;align-items:center;">
         <button class="kb-ctrl-btn" onclick="mResetHeat()"><span data-i18n="clear">↺ Wyczyść</span></button>
-        <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);" id="heatClickCount">Kliknięć: 0</div>
+        <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);" id="heatClickCount" data-i18n="tr_klikniec_0">Kliknięć: 0</div>
         <div style="margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);">
           <span style="color:#4444ff">■</span> mało &nbsp;
           <span style="color:#00ff88">■</span> średnio &nbsp;
@@ -1890,7 +1890,7 @@
           <button class="cel-time-btn" onclick="celSetTime(60,this)">60s</button>
           <button class="cel-time-btn" onclick="celSetTime(120,this)">2min</button>
         </div>
-        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);" id="celStatus">Naciśnij START żeby zacząć</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);" id="celStatus" data-i18n="tr_nacisnij_start_zeby_zaczac">Naciśnij START żeby zacząć</div>
         <div style="margin-left:auto;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);">Czas: <span id="celTime" style="color:#ff4d6d">15</span>s</div>
       </div>
     </div>
@@ -1911,12 +1911,12 @@
       <div class="sys-big-card">
         <div class="sbc-lbl">RDZENIE CPU</div>
         <div class="sbc-val" id="siCores" style="color:#f5c400">—</div>
-        <div class="sbc-sub" id="siCoresSub">wątki logiczne</div>
+        <div class="sbc-sub" id="siCoresSub" data-i18n="tr_watki_logiczne">wątki logiczne</div>
       </div>
       <div class="sys-big-card">
         <div class="sbc-lbl"><span data-i18n="si_memory">PAMIĘĆ RAM</span></div>
         <div class="sbc-val" id="siRam" style="color:#00b4d8">—</div>
-        <div class="sbc-sub">GB (wg przeglądarki)</div>
+        <div class="sbc-sub" data-i18n="tr_gb_wg_przegladarki">GB (wg przeglądarki)</div>
         <div style="font-family:'Space Mono',monospace;font-size:8px;color:#f5c400;margin-top:5px;line-height:1.4;" id="siRamNote"></div>
       </div>
       <div class="sys-big-card">
@@ -1927,7 +1927,7 @@
       <div class="sys-big-card">
         <div class="sbc-lbl">PIKSELE EKRANU</div>
         <div class="sbc-val" id="siRes" style="color:#a78bff;font-size:14px;">—</div>
-        <div class="sbc-sub" id="siResSub">rozdzielczość</div>
+        <div class="sbc-sub" id="siResSub" data-i18n="tr_rozdzielczosc">rozdzielczość</div>
       </div>
     </div>
 
@@ -1935,7 +1935,7 @@
     <div class="sys-card">
       <div class="sc-title">🔋 BATERIA</div>
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="sc-val" id="siBattDetail">Ładowanie informacji...</div>
+        <div class="sc-val" id="siBattDetail" data-i18n="tr_adowanie_informacji">Ładowanie informacji...</div>
         <div style="font-family:'Space Mono',monospace;font-size:11px;" id="siBattTime"></div>
       </div>
       <div class="batt-bar-bg"><div class="batt-bar-fill" id="siBattBar" style="width:0%;"></div></div>
@@ -2004,7 +2004,7 @@
     <div style="display:flex;gap:6px;margin-bottom:12px;">
       <button class="rt-mode-btn active" id="rtModeClick"  onclick="rtSetMode('click')"  style="flex:1;">🖱️ Klik</button>
       <button class="rt-mode-btn"        id="rtModeSpace"  onclick="rtSetMode('space')"  style="flex:1;">⌨️ Spacja</button>
-      <button class="rt-mode-btn"        id="rtModeChoice" onclick="rtSetMode('choice')" style="flex:1;">🎲 Wybór ← →</button>
+      <button class="rt-mode-btn"        id="rtModeChoice" onclick="rtSetMode('choice')" style="flex:1;" data-i18n="tr_wybor">🎲 Wybór ← →</button>
     </div>
 
     <div id="rtArea" onclick="rtHandleClick()" style="
@@ -2135,7 +2135,7 @@
         <button class="vr-preset active" data-preset="normal"    onclick="vrSetPreset('normal',this)">🎤 Normalny</button>
         <button class="vr-preset"        data-preset="robot"     onclick="vrSetPreset('robot',this)">🤖 Robot</button>
         <button class="vr-preset"        data-preset="deep"      onclick="vrSetPreset('deep',this)">👹 Niski</button>
-        <button class="vr-preset"        data-preset="chipmunk"  onclick="vrSetPreset('chipmunk',this)">🐿️ Wiewiórka</button>
+        <button class="vr-preset"        data-preset="chipmunk"  onclick="vrSetPreset('chipmunk',this)" data-i18n="tr_wiewiorka">🐿️ Wiewiórka</button>
         <button class="vr-preset"        data-preset="echo"      onclick="vrSetPreset('echo',this)">🏔️ Echo</button>
         <button class="vr-preset"        data-preset="phone"     onclick="vrSetPreset('phone',this)">📞 Telefon</button>
         <button class="vr-preset"        data-preset="alien"     onclick="vrSetPreset('alien',this)">👽 Alien</button>
@@ -2152,19 +2152,19 @@
         <button class="vr-preset"        data-preset="darth"     onclick="vrSetPreset('darth',this)">🌑 Darth</button>
         <button class="vr-preset"        data-preset="giant"     onclick="vrSetPreset('giant',this)">🗿 Gigant</button>
         <button class="vr-preset"        data-preset="ghost"     onclick="vrSetPreset('ghost',this)">👻 Duch</button>
-        <button class="vr-preset"        data-preset="choir"     onclick="vrSetPreset('choir',this)">🎶 Chór</button>
+        <button class="vr-preset"        data-preset="choir"     onclick="vrSetPreset('choir',this)" data-i18n="tr_chor">🎶 Chór</button>
         <button class="vr-preset"        data-preset="troll"     onclick="vrSetPreset('troll',this)">🧌 Troll</button>
         <button class="vr-preset"        data-preset="chipmunk2" onclick="vrSetPreset('chipmunk2',this)">🐭 Mysz</button>
         <button class="vr-preset"        data-preset="horror"    onclick="vrSetPreset('horror',this)">💀 Horror</button>
-        <button class="vr-preset"        data-preset="angel"     onclick="vrSetPreset('angel',this)">😇 Anioł</button>
+        <button class="vr-preset"        data-preset="angel"     onclick="vrSetPreset('angel',this)" data-i18n="tr_anio">😇 Anioł</button>
         <button class="vr-preset"        data-preset="walkie"    onclick="vrSetPreset('walkie',this)">📟 Walkie</button>
         <button class="vr-preset"        data-preset="submarine" onclick="vrSetPreset('submarine',this)">🚢 Sonar</button>
         <button class="vr-preset"        data-preset="drunk"     onclick="vrSetPreset('drunk',this)">🍺 Pijany</button>
-        <button class="vr-preset"        data-preset="monster"   onclick="vrSetPreset('monster',this)">🦖 Potwór</button>
-        <button class="vr-preset"        data-preset="cartoon"   onclick="vrSetPreset('cartoon',this)">🎭 Kreskówka</button>
+        <button class="vr-preset"        data-preset="monster"   onclick="vrSetPreset('monster',this)" data-i18n="tr_potwor">🦖 Potwór</button>
+        <button class="vr-preset"        data-preset="cartoon"   onclick="vrSetPreset('cartoon',this)" data-i18n="tr_kreskowka">🎭 Kreskówka</button>
         <button class="vr-preset"        data-preset="cave2"     onclick="vrSetPreset('cave2',this)">🏔️ Grota</button>
         <button class="vr-preset"        data-preset="radio2"    onclick="vrSetPreset('radio2',this)">📡 CB Radio</button>
-        <button class="vr-preset"        data-preset="bathroom"  onclick="vrSetPreset('bathroom',this)">🚿 Łazienka</button>
+        <button class="vr-preset"        data-preset="bathroom"  onclick="vrSetPreset('bathroom',this)" data-i18n="tr_azienka">🚿 Łazienka</button>
         <button class="vr-preset"        data-preset="cyborg"    onclick="vrSetPreset('cyborg',this)">🤖 Cyborg</button>
         <button class="vr-preset"        data-preset="baby"      onclick="vrSetPreset('baby',this)">👶 Dziecko</button>
         <button class="vr-preset"        data-preset="satan"     onclick="vrSetPreset('satan',this)">😈 Szatan</button>
@@ -2228,7 +2228,7 @@
       </div>
       <!-- Głośność wyjścia -->
       <div style="display:flex;align-items:center;gap:10px;">
-        <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);width:56px;flex-shrink:0;">🔊 Głośność</span>
+        <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);width:56px;flex-shrink:0;" data-i18n="tr_g_osnosc">🔊 Głośność</span>
         <input type="range" id="vrVolume" min="0" max="3" value="1" step="0.05" style="flex:1;accent-color:#f5c400;" oninput="vrUpdateSliders()">
         <span id="vrVolumeVal" style="font-family:'Space Mono',monospace;font-size:10px;color:#f5c400;min-width:36px;text-align:right;">100%</span>
       </div>
@@ -2273,7 +2273,7 @@
 
     <!-- A/B status bar -->
     <div id="vrABBar" style="display:none;background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.25);border-radius:8px;padding:8px 14px;font-family:'Space Mono',monospace;font-size:9px;color:#00b4d8;letter-spacing:1px;text-align:center;">
-      🔵 TRYB A/B — odtwarza <span id="vrABLabel">ORYGINAŁ</span> · kliknij A/B aby przełączyć
+      🔵 TRYB A/B — odtwarza <span id="vrABLabel" data-i18n="tr_orygina">ORYGINAŁ</span> · kliknij A/B aby przełączyć
     </div>
   </div>
 </div>
@@ -2399,12 +2399,12 @@
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="neon_ping"  onclick="kbSetSound('neon_ping')">🔆 Neon</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="telegraph"  onclick="kbSetSound('telegraph')">📡 Telegraf</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="whoosh"     onclick="kbSetSound('whoosh')">💨 Whoosh</button>
-          <button class="kb-ctrl-btn kb-sound-btn" data-profile="glass"      onclick="kbSetSound('glass')">🥂 Szkło</button>
+          <button class="kb-ctrl-btn kb-sound-btn" data-profile="glass"      onclick="kbSetSound('glass')" data-i18n="tr_szk_o">🥂 Szkło</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="zap"        onclick="kbSetSound('zap')">⚡ Zap</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="bass_drum"  onclick="kbSetSound('bass_drum')">🔊 Bass</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="hat"        onclick="kbSetSound('hat')">🎩 Hi-Hat</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="flute"      onclick="kbSetSound('flute')">🎵 Flet</button>
-          <button class="kb-ctrl-btn kb-sound-btn" data-profile="choir"      onclick="kbSetSound('choir')">🎤 Chór</button>
+          <button class="kb-ctrl-btn kb-sound-btn" data-profile="choir"      onclick="kbSetSound('choir')" data-i18n="tr_chor_2">🎤 Chór</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="guitar"     onclick="kbSetSound('guitar')">🎸 Gitara</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="pingpong"   onclick="kbSetSound('pingpong')">🏓 Ping Pong</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="djembe"     onclick="kbSetSound('djembe')">🪘 Djembe</button>
@@ -2413,11 +2413,11 @@
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="punch"      onclick="kbSetSound('punch')">🥊 Punch</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="space"      onclick="kbSetSound('space')">🌙 Space</button>
           <button class="kb-ctrl-btn kb-sound-btn" data-profile="dartboard"  onclick="kbSetSound('dartboard')">🎯 Dart</button>
-          <button class="kb-ctrl-btn kb-sound-btn" data-profile="frog"       onclick="kbSetSound('frog')">🐸 Żaba</button>
-          <button class="kb-ctrl-btn" id="kbBtnSoundOff" onclick="kbSoundOff()">🔇 Wył</button>
+          <button class="kb-ctrl-btn kb-sound-btn" data-profile="frog"       onclick="kbSetSound('frog')" data-i18n="tr_zaba">🐸 Żaba</button>
+          <button class="kb-ctrl-btn" id="kbBtnSoundOff" onclick="kbSoundOff()" data-i18n="tr_wy">🔇 Wył</button>
         </div>
       </div>
-      <div style="margin-left:auto;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);align-self:center;text-align:right;" id="kbHint">
+      <div style="margin-left:auto;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);align-self:center;text-align:right;" id="kbHint" data-i18n="tr_nacisnij_start_potem_naciskaj">
         Naciśnij START, potem naciskaj klawisze
       </div>
     </div>
@@ -2435,7 +2435,7 @@
     <!-- MONITOR BUTTON -->
     <button class="ms-monitor-btn" id="msMonitorBtn" onclick="toggleMonitor()">
       <span id="msMonitorIcon">▶</span>
-      <span id="msMonitorLabel">Włącz odsłuch głosu</span>
+      <span id="msMonitorLabel" data-i18n="tr_w_acz_ods_uch">Włącz odsłuch głosu</span>
     </button>
 
     <!-- VOLUME BAR -->
@@ -2488,13 +2488,13 @@
       <div class="ms-slider-row">
         <label>🔇 Bramka szumu</label>
         <input type="range" id="msGateSlider" min="0" max="60" step="1" value="0" oninput="setMsGate(this.value)">
-        <span id="msGateVal">Wyłącz</span>
+        <span id="msGateVal" data-i18n="tr_wy_acz">Wyłącz</span>
       </div>
     </div>
 
     <!-- EFEKTY GŁOSU — 16 sztuk -->
     <div>
-      <div class="section-label">Efekty głosu</div>
+      <div class="section-label" data-i18n="tr_efekty_g_osu">Efekty głosu</div>
       <div class="ms-fx-grid">
         <button class="ms-fx-btn active" id="msfx-normal"   onclick="setMsFx('normal',this)">🎙️ Normal</button>
         <button class="ms-fx-btn" id="msfx-robot"    onclick="setMsFx('robot',this)">🤖 Robot</button>
@@ -2560,7 +2560,7 @@
         <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:8px;"><span data-i18n="mic_qual_lbl">JAKOŚĆ SYGNAŁU</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:3px;">SNR (stosunek sygnał/szum)</div>
+            <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:3px;" data-i18n="tr_snr_stosunek_sygna_szum">SNR (stosunek sygnał/szum)</div>
             <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
               <div id="msSnrBar" style="height:100%;width:0%;background:linear-gradient(to right,#ff4d6d,#f5c400,#00f5a0);border-radius:3px;transition:width 0.3s;"></div>
             </div>
@@ -2576,7 +2576,7 @@
         </div>
         <div style="margin-top:10px;display:flex;align-items:center;gap:10px;">
           <div id="msQualBadge" style="padding:4px 14px;border-radius:20px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border);">Kalibrowanie...</div>
-          <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);" id="msQualDesc">Czekam na dźwięk...</div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);" id="msQualDesc" data-i18n="tr_czekam_na_dzwiek">Czekam na dźwięk...</div>
         </div>
       </div>
 
@@ -2791,7 +2791,7 @@
 
       <!-- Region / Stan -->
       <div class="nsp-card">
-        <div class="nsp-label">REGION / WOJEWÓDZTWO</div>
+        <div class="nsp-label" data-i18n="tr_region_wojewodztwo">REGION / WOJEWÓDZTWO</div>
         <div class="nsp-val" id="nspRegion" style="font-size:11px;">—</div>
       </div>
 
@@ -2862,7 +2862,7 @@
 
       <div class="nsp-title" style="margin-top:10px;">🚀 Hosting / CDN</div>
       <div class="nsp-card highlight" style="border-color:rgba(99,102,241,0.4);">
-        <div class="nsp-label">PROTOKÓŁ HTTP</div>
+        <div class="nsp-label" data-i18n="tr_protoko_http">PROTOKÓŁ HTTP</div>
         <div class="nsp-val" style="color:#818cf8;" id="nspHttpProto">—</div>
       </div>
       <div class="nsp-card">
@@ -2898,7 +2898,7 @@
     </div>
 
     <!-- Phase label -->
-    <div class="net-phase-lbl" id="netPhaseLabel">Naciśnij START</div>
+    <div class="net-phase-lbl" id="netPhaseLabel" data-i18n="tr_nacisnij_start">Naciśnij START</div>
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px;">
       <div style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;">⏱</div>
       <div style="font-family:'Space Mono',monospace;font-size:13px;color:#00b4d8;min-width:36px;" id="netPhaseTimer">0:00</div>
@@ -3006,7 +3006,7 @@
       </div>
       <div id="cspStatus" style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:12px;min-height:14px;"></div>
       <div id="cspRawWrap" style="display:none;margin-bottom:16px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:6px;">📋 RAW NAGŁÓWEK</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:6px;" data-i18n="tr_raw_nag_owek">📋 RAW NAGŁÓWEK</div>
         <div id="cspRaw" style="font-family:'Space Mono',monospace;font-size:9px;color:#a7f3d0;background:rgba(0,0,0,0.4);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:10px 12px;word-break:break-all;line-height:1.7;max-height:90px;overflow-y:auto;"></div>
       </div>
       <div id="cspDirectivesWrap" style="display:none;margin-bottom:16px;">
@@ -3014,21 +3014,21 @@
         <div id="cspDirectives" style="display:flex;flex-direction:column;gap:6px;"></div>
       </div>
       <div id="cspAnalysisWrap" style="display:none;margin-bottom:16px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;">🔎 ANALIZA BEZPIECZEŃSTWA</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_analiza_bezpieczenstwa">🔎 ANALIZA BEZPIECZEŃSTWA</div>
         <div id="cspAnalysis" style="display:flex;flex-direction:column;gap:5px;"></div>
       </div>
       <div id="cspHeadersWrap" style="display:none;margin-bottom:16px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;">🔒 INNE NAGŁÓWKI BEZPIECZEŃSTWA</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_inne_nag_owki_bezpieczenstwa">🔒 INNE NAGŁÓWKI BEZPIECZEŃSTWA</div>
         <div id="cspHeaders" style="display:flex;flex-direction:column;gap:5px;"></div>
       </div>
-      <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.15);text-align:center;line-height:2;margin-top:4px;">
+      <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.15);text-align:center;line-height:2;margin-top:4px;" data-i18n="tr_dzia_a_bezposrednio_tylko">
         ⚠️ Działa bezpośrednio tylko dla tej samej domeny — dla obcych URL użyj zakładki 🌐 Proxy
       </div>
     </div>
 
     <!-- ══ TAB: PROXY ══ -->
     <div id="cspPanel_proxy" style="display:none;">
-      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-bottom:10px;">Skanuje dowolną stronę przez publiczne proxy CORS — omija blokadę nagłówków cross-origin.</div>
+      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-bottom:10px;" data-i18n="tr_skanuje_dowolna_strone_przez">Skanuje dowolną stronę przez publiczne proxy CORS — omija blokadę nagłówków cross-origin.</div>
       <div style="display:flex;gap:8px;margin-bottom:10px;">
         <input id="cspProxyUrl" type="url" placeholder="https://example.com"
           style="flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(99,102,241,0.35);background:rgba(0,0,0,0.3);color:#fff;font-family:'Space Mono',monospace;font-size:11px;outline:none;"
@@ -3046,7 +3046,7 @@
       <!-- Proxy results (reuse same layout) -->
       <div id="cspProxyRawWrap" style="display:none;margin-bottom:14px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;">📋 RAW NAGŁÓWEK</span>
+          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;" data-i18n="tr_raw_nag_owek_2">📋 RAW NAGŁÓWEK</span>
           <button onclick="cspCopyProxyRaw()" style="padding:3px 10px;border-radius:5px;border:1px solid rgba(99,102,241,0.3);background:rgba(99,102,241,0.08);color:#a5b4fc;font-family:'Space Mono',monospace;font-size:7px;cursor:pointer;">📋 Kopiuj</button>
         </div>
         <div id="cspProxyRaw" style="font-family:'Space Mono',monospace;font-size:9px;color:#c7d2fe;background:rgba(0,0,0,0.4);border:1px solid rgba(99,102,241,0.15);border-radius:8px;padding:10px 12px;word-break:break-all;line-height:1.7;max-height:90px;overflow-y:auto;"></div>
@@ -3056,14 +3056,14 @@
         <div id="cspProxyAnalysis" style="display:flex;flex-direction:column;gap:5px;"></div>
       </div>
       <div id="cspProxyHeadersWrap" style="display:none;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;">🔒 NAGŁÓWKI BEZPIECZEŃSTWA</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:8px;" data-i18n="tr_nag_owki_bezpieczenstwa">🔒 NAGŁÓWKI BEZPIECZEŃSTWA</div>
         <div id="cspProxyHeaders" style="display:flex;flex-direction:column;gap:5px;"></div>
       </div>
     </div>
 
     <!-- ══ TAB: GENERATOR ══ -->
     <div id="cspPanel_gen" style="display:none;">
-      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-bottom:14px;">Zaznacz co chcesz zezwolić — nagłówek CSP wygeneruje się automatycznie.</div>
+      <div style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-bottom:14px;" data-i18n="tr_zaznacz_co_chcesz_zezwolic">Zaznacz co chcesz zezwolić — nagłówek CSP wygeneruje się automatycznie.</div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
 
@@ -3125,7 +3125,7 @@
 
       <!-- Security options -->
       <div style="padding:12px;border-radius:10px;background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.12);margin-bottom:14px;">
-        <div style="font-family:'Space Mono',monospace;font-size:8px;color:#10b981;letter-spacing:1px;margin-bottom:10px;">🔒 OPCJE BEZPIECZEŃSTWA</div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;color:#10b981;letter-spacing:1px;margin-bottom:10px;" data-i18n="tr_opcje_bezpieczenstwa">🔒 OPCJE BEZPIECZEŃSTWA</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
           <label style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.6);cursor:pointer;"><input type="checkbox" id="g_opt_upgrade" checked onchange="cspGenUpdate()"> upgrade-insecure-requests</label>
           <label style="display:flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.6);cursor:pointer;"><input type="checkbox" id="g_opt_objnone" checked onchange="cspGenUpdate()"> object-src 'none'</label>
@@ -3139,7 +3139,7 @@
       <!-- Generated output -->
       <div style="margin-bottom:10px;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;">✨ WYGENEROWANY NAGŁÓWEK</span>
+          <span style="font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;" data-i18n="tr_wygenerowany_nag_owek">✨ WYGENEROWANY NAGŁÓWEK</span>
           <div style="display:flex;gap:6px;">
             <button onclick="cspCopyHeader()" style="padding:4px 12px;border-radius:6px;border:1px solid rgba(16,185,129,0.4);background:rgba(16,185,129,0.08);color:#10b981;font-family:'Space Mono',monospace;font-size:8px;cursor:pointer;">📋 Kopiuj CSP</button>
             <button onclick="cspCopyNetlify()" style="padding:4px 12px;border-radius:6px;border:1px solid rgba(99,102,241,0.4);background:rgba(99,102,241,0.08);color:#a5b4fc;font-family:'Space Mono',monospace;font-size:8px;cursor:pointer;">📄 Kopiuj _headers</button>
